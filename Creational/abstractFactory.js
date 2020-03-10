@@ -58,8 +58,8 @@ class ApiRequestFactory {
  * Use this in another class making the product class
  * and client class isolated
  */
-const availableOptions = ["tcp", "http"]
-const apiRequest = ApiRequestFactory.createApiRequest(availableOptions[Math.random() * 2]);
+const availableOptions = ["tcp", "http"];
+const apiRequest = ApiRequestFactory.createApiRequest(availableOptions[Math.floor(Math.random() * 2)]);
 apiRequest.makeGetRequest("example.com")
   .then(respone => console.log(respone))
   .catch(err => console.log(err));
