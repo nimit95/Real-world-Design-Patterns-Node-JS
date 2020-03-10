@@ -4,7 +4,7 @@ const http = require('http');
 // Abstract Product Class
 class ApiRequest {
   makeGetRequest(url) {
-    return Error("Implement make Get Request");
+    return Error(`Implement make Get Request for ${url}`);
   }
 }
 
@@ -18,12 +18,12 @@ class tcpApiRequest extends ApiRequest {
         port: "80"
       });
 
-      socket.on('data', (data) => resolve(data.toString()) );
+      socket.on('data', (data) => resolve(data.toString()));
 
-      socket.on('error', err => reject(err))
+      socket.on('error', err => reject(err));
   
-      socket.end(`GET / HTTP/1.1\r\nHost: ${url}\r\n\r\n`)
-    })
+      socket.end(`GET / HTTP/1.1\r\nHost: ${url}\r\n\r\n`);
+    });
     
   }
 }
@@ -37,8 +37,7 @@ class httpApiRequest extends ApiRequest {
         res.on('data', data => resolve(data.toString()));
         res.on('error', err => reject(err));
       }).end();
-    })
-    
+    });
   }
 }
 
