@@ -1,7 +1,8 @@
 {
     "extends": [
         "eslint:recommended",
-        "plugin:node/recommended"
+        "plugin:node/recommended",
+        "standard"
     ],
     "parserOptions": {
         // Only ESLint 6.2.0 and later support ES2020.
@@ -16,6 +17,7 @@
         "node/prefer-global/url-search-params": ["error", "always"],
         "node/prefer-global/url": ["error", "always"],
         "node/prefer-promises/dns": "error",
-        "node/prefer-promises/fs": "error"
+        "node/prefer-promises/fs": "error",
+        "semi": [1, "always"]
     }
 }
