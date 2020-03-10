@@ -1,0 +1,31 @@
+{
+  "name": "design-patterns-gof-js",
+  "version": "1.0.0",
+  "description": "All the 23 (GoF) design patterns implemented in Javascript with Real World Examples and Comments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimit95/Real-world-Design-Patter-JS.git"
+  },
+  "keywords": [
+    "design-patterns",
+    "design",
+    "patterns",
+    "gof",
+    "js",
+    "node"
+  ],
+  "author": "nimit95",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nimit95/Real-world-Design-Patter-JS/issues"
+  },
+  "homepage": "https://github.com/nimit95/Real-world-Design-Patter-JS#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-node": "^11.0.0"
+  }
+}

@@ -1,0 +1,7 @@
+dea/
+node_modules/
+coverage/
+*.swp
+*.swo
+/.idea
+.vscode/*
