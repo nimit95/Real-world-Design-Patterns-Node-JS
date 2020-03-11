@@ -41,6 +41,10 @@ class httpApiRequest extends ApiRequest {
   }
 }
 
+/**
+ * This is an abstract factory interface. Uses a static function to 
+ * generate family of products.
+ */
 class ApiRequestFactory {
   static createApiRequest(kind) {
     // This can easily be extended to include HTTPS, HTTP2, HTTP3
