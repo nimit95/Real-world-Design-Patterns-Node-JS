@@ -1,6 +1,6 @@
 ## Real World Design Patterns using NodeJs APIs
 
-Here you will find the 23 (Gof) design patterns implemented in Javascript using the ES6 classes. These would be real world examples using Nodejs APIs. Also I have put extra effort to make JS classes abstract.
+Here you will find the 23 (Gof) design patterns implemented in Javascript using the ES6 classes eith NodeJs Apis. Also I have put an extra effort to make abstract classes as well. These files can be used to learn design patterns as well as Node Apis, You can use the [**docs.md**](docs.md) tto get overview of all examples.
 
 Follows the list of patterns separed by type:
 
