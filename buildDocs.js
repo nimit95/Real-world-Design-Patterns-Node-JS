@@ -7,7 +7,9 @@ const DOCS_FILE = './docs.md';
 const sections = [{
   name: 'Creational', topics: [
     { name: 'abstractFactory', path: './Creational' },
-     { name: 'builder', path: './Creational'  }]
+    { name: 'builder', path: './Creational'  },
+    { name: 'factoryMethod', path: './Creational'  }
+  ]
 }];
 
 /* Utility functions  */
