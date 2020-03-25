@@ -8,7 +8,9 @@ const sections = [{
   name: 'Creational', topics: [
     { name: 'abstractFactory', path: './Creational' },
     { name: 'builder', path: './Creational'  },
-    { name: 'factoryMethod', path: './Creational'  }
+    { name: 'factoryMethod', path: './Creational'  },
+    { name: 'prototype', path: './Creational'  },
+    { name: 'singleton', path: './Creational'  }
   ]
 }];
 

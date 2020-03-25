@@ -4,6 +4,8 @@
 * [Abstract Factory](#abstract-factory)
 * [Builder](#builder)
 * [Factory Method](#factory-method)
+* [Prototype](#prototype)
+* [Singleton](#singleton)
 
 
 
@@ -77,7 +79,7 @@ class ApiRequestFactory {
 const availableOptions = ["tcp", "http"];
 const apiRequest = ApiRequestFactory.createApiRequest(availableOptions[Math.floor(Math.random() * 2)]);
 apiRequest.makeGetRequest("example.com")
-  .then(respone => console.log(respone))
+  .then(response => console.log(response))
   .catch(err => console.log(err));
 ```
 
@@ -232,6 +234,61 @@ class ClientHTTP extends ClientTcp {
 
 let c = new ClientHTTP;
 c.main();
+```
+
+### Prototype
+##### prototype.js
+```Javascript
+class Server {
+
+  constructor(port) {
+    this._port = port;
+  }
+  listen() {
+    console.log("Listening on port");
+  }
+  clone() {
+    return new Server(this._port);
+  }
+}
+
+const server = new Server();
+const newServer = server.clone();
+newServer.listen();
+```
+
+### Singleton
+##### singleton.js
+```Javascript
+class Server {
+  constructor(port) {
+    this._port = port;
+  }
+  static init(port) {
+    if (typeof Server.instance === 'object') {
+      return Server.instance;
+    }
+    Server.instance = new Server(port);
+    return Server.instance;
+  }
+  static getInstance() {
+    if (typeof Server.instance === 'object') {
+      return Server.instance;
+    }
+    Server.instance = new Server(8080);
+    return Server.instance;
+  }
+  status() {
+    console.log("Server listening on port " + this._port);
+  }
+}
+
+/**
+ * Client calls init, and getInstance would give that instance
+ * always. Singleton is used for heavy single use objects like DB
+ */
+Server.init(1234);
+Server.getInstance().status();
 ```
 
 
