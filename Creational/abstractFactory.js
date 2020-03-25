@@ -64,5 +64,5 @@ class ApiRequestFactory {
 const availableOptions = ["tcp", "http"];
 const apiRequest = ApiRequestFactory.createApiRequest(availableOptions[Math.floor(Math.random() * 2)]);
 apiRequest.makeGetRequest("example.com")
-  .then(respone => console.log(respone))
+  .then(response => console.log(response))
   .catch(err => console.log(err));
