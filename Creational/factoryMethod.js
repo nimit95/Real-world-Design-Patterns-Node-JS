@@ -68,5 +68,5 @@ class ClientHTTP extends ClientTcp {
   }
 }
 
-let c = new ClientHTTP;
+let c = new ClientHTTP();
 c.main();

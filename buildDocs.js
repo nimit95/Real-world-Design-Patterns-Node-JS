@@ -4,15 +4,24 @@ const nPath = require('path');
 /* Path Constants */
 const DOCS_FILE = './docs.md';
 
-const sections = [{
-  name: 'Creational', topics: [
-    { name: 'abstractFactory', path: './Creational' },
-    { name: 'builder', path: './Creational'  },
-    { name: 'factoryMethod', path: './Creational'  },
-    { name: 'prototype', path: './Creational'  },
-    { name: 'singleton', path: './Creational'  }
-  ]
-}];
+const sections = [
+  {
+    name: 'Creational', 
+    topics: [
+      { name: 'abstractFactory', path: './Creational' },
+      { name: 'builder', path: './Creational'  },
+      { name: 'factoryMethod', path: './Creational'  },
+      { name: 'prototype', path: './Creational'  },
+      { name: 'singleton', path: './Creational'  }
+    ]
+  },
+  {
+    name: 'Structural', 
+    topics: [
+      { name: 'adapter', path: './Structural' }
+    ]
+  }
+];
 
 /* Utility functions  */
 const stripPunctuation = (str) =>
