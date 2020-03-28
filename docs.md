@@ -9,6 +9,8 @@
 
 **[ Structural](#structural)**
 * [Adapter](#adapter)
+* [Bridge](#bridge)
+* [Composite](#composite)
 
 
 
@@ -340,6 +342,97 @@ class Client {
 
 const client = new Client();
 client.reader().then(res => console.log("Reading " + res));
+
+```
+
+### Bridge
+##### bridge.js
+```Javascript
+/**
+ * ApiRequestFactory gives underlying implementation of 
+ * api get request that we make
+ */
+const ApiRequestFactory = require("./lib");
+class UpstreamFile {
+  getFileUpstream() { }
+}
+/**
+ * This is abstraction class that doesnt care about
+ * the implementation of api request. 
+ */
+class Config extends UpstreamFile {
+  constructor(url, apiRequest) {
+    super();
+    this.url = url;
+    this.apiRequest = apiRequest;
+  }
+  getFileUpstream() {
+    this.apiRequest
+      .makeGetRequest(this.url)
+      .then(response => console.log(response))
+      .catch(err => console.log(err));
+  }
+}
+
+class Post extends UpstreamFile {
+  constructor(url, apiRequest) {
+    super();
+    this.url = url;
+    this.apiRequest = apiRequest;
+  }
+  getFileUpstream() {
+    this.apiRequest
+      .makeGetRequest(this.url)
+      .then(response => console.log(response))
+      .catch(err => console.log(err));
+  }
+}
+/**
+ * AbstractFactory is used to generate related implementation for these 
+ * classes
+ */
+new Config("https://jsonplaceholder.typicode.com/todos/1", ApiRequestFactory.createApiRequest("tcp")).getFileUpstream();
+new Post("jsonplaceholder.typicode.com/posts/1", ApiRequestFactory.createApiRequest("http")).getFileUpstream();
+```
+
+### Composite
+##### composite.js
+```Javascript
+
+class ContentBuffer {
+  getSize() {
+    return this.buf.length || 0;
+  }
+}
+
+// Composite Class has children as filebuffer
+class DirBuffer extends ContentBuffer {
+  constructor() {
+    super();
+    this.bufferList = [];
+  }
+  getSize() {
+    return this.bufferList.map(buf => buf.getSize()).reduce((a, b) => a + b);
+  }
+  addBuffer(buf) {
+    this.bufferList.push(buf);
+  }
+}
+// Leaf class
+class FileBuffer extends ContentBuffer {
+  setBuffer(buf) {
+    this.buf = buf;
+    return this;
+  }
+}
+
+const file1 = new FileBuffer().setBuffer(Buffer.from("hello"));
+const file2 = new FileBuffer().setBuffer(Buffer.from("hello2"));
+
+const compositeObj = new DirBuffer();
+compositeObj.addBuffer(file1);
+compositeObj.addBuffer(file2);
+console.log(compositeObj.getSize());
 
 ```
 

@@ -18,7 +18,9 @@ const sections = [
   {
     name: 'Structural', 
     topics: [
-      { name: 'adapter', path: './Structural' }
+      { name: 'adapter', path: './Structural' },
+      { name: 'bridge', path: './Structural' },
+      { name: 'composite', path: './Structural' }
     ]
   }
 ];
