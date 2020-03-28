@@ -20,7 +20,8 @@ const sections = [
     topics: [
       { name: 'adapter', path: './Structural' },
       { name: 'bridge', path: './Structural' },
-      { name: 'composite', path: './Structural' }
+      { name: 'composite', path: './Structural' },
+      { name: 'decorator', path: './Structural' },
     ]
   }
 ];
