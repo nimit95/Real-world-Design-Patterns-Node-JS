@@ -22,6 +22,7 @@ const sections = [
       { name: 'bridge', path: './Structural' },
       { name: 'composite', path: './Structural' },
       { name: 'decorator', path: './Structural' },
+      { name: 'facade', path: './Structural' },
     ]
   }
 ];
