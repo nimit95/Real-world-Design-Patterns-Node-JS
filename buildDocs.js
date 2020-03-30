@@ -23,6 +23,7 @@ const sections = [
       { name: 'composite', path: './Structural' },
       { name: 'decorator', path: './Structural' },
       { name: 'facade', path: './Structural' },
+      { name: 'flyweight', path: './Structural' },
     ]
   }
 ];
