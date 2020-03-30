@@ -24,6 +24,7 @@ const sections = [
       { name: 'decorator', path: './Structural' },
       { name: 'facade', path: './Structural' },
       { name: 'flyweight', path: './Structural' },
+      { name: 'proxy', path: './Structural' },
     ]
   }
 ];
