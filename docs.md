@@ -16,6 +16,10 @@
 * [Flyweight](#flyweight)
 * [Proxy](#proxy)
 
+**[ Behavioral](#behavioral)**
+* [Chain Of Responsibility](#chain-of-responsibility)
+* [Command](#command)
+
 
 
 ## Creational
@@ -620,6 +624,112 @@ class CachedDatabase extends DatabaseBase {
  */
 const db = new CachedDatabase();
 console.log(db.query("query1"));
+```
+
+
+## Behavioral
+### Chain Of Responsibility
+##### chainOfResponsibility.js
+```Javascript
+class ConfigCheck {
+  check() {
+    return true;
+  }
+
+  setNext(next) {
+    // Returning a handler from here will let us link handlers in a convenient
+    this._next = next;
+    return next;
+  }
+}
+
+// Chanin of commands for checking config
+class AuthCheck extends ConfigCheck {
+  check(config) {
+    if (!config.key) return new Error("No key");
+    if (!config.password) return new Error("No password");
+    if (this._next)
+      return this._next.check(config);
+    else {
+      return super.check();
+    }
+  }
+}
+
+class URLCheck extends ConfigCheck {
+  check(config) {
+    if (!config.url) return new Error("No valid URL");
+    if (this._next)
+      return this._next.check(config);
+    else {
+      return super.check();
+    }
+  }
+}
+
+const urlChecker = new URLCheck();
+const authChecker = new AuthCheck();
+
+urlChecker.setNext(authChecker);
+
+console.log(urlChecker.check({}));
+const config = {
+  key: "abc",
+  password: "secret",
+  url: "valid url"
+};
+console.log(urlChecker.check(config));
+```
+
+### Command
+##### command.js
+```Javascript
+class Command {
+  execute() {
+    return new Error("Implement execute method!");
+  }
+}
+
+/**
+ * Simple Stream workflow
+ */
+
+class Stream {
+  constructor() {
+    this._handlers = {};
+  }
+  on(key, command) {
+    this._handlers[key] = command;
+  }
+  connect() {
+    // On sftream connect
+    if(this._handlers['connect']) {
+      this._handlers['connect'].execute();
+    }
+    // Do some other work 
+    // disconnect the connection and call callback
+    if(this._handlers['disconnect']) {
+      this._handlers['disconnect'].execute();
+    }
+  }
+}
+// A command implementation
+class ConnectCallback extends Command {
+  execute() {
+    console.log("executing connect callback");
+  }
+}
+class DisconnectCallback extends Command {
+  execute() {
+    console.log("executing disconnect callback");
+  }
+}
+
+const exampleStream = new Stream();
+exampleStream.on('connect', new ConnectCallback());
+exampleStream.on('disconnect', new DisconnectCallback());
+
+exampleStream.connect();
 ```
 
 

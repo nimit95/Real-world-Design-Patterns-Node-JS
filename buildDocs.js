@@ -26,6 +26,13 @@ const sections = [
       { name: 'flyweight', path: './Structural' },
       { name: 'proxy', path: './Structural' },
     ]
+  },
+  {
+    name: 'Behavioral', 
+    topics: [
+      { name: 'chainOfResponsibility', path: './Behavioral' },
+      { name: 'command', path: './Behavioral' },
+    ]
   }
 ];
 
