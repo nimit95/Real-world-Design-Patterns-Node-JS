@@ -32,6 +32,7 @@ const sections = [
     topics: [
       { name: 'chainOfResponsibility', path: './Behavioral' },
       { name: 'command', path: './Behavioral' },
+      { name: 'iterator', path: './Behavioral' },
     ]
   }
 ];

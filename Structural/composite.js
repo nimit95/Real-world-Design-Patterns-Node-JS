@@ -1,8 +1,6 @@
 
 class ContentBuffer {
-  getSize() {
-    return this.buf.length || 0;
-  }
+  getSize() { }
 }
 
 // Composite Class has children as filebuffer
@@ -23,6 +21,9 @@ class FileBuffer extends ContentBuffer {
   setBuffer(buf) {
     this.buf = buf;
     return this;
+  }
+  getSize() {
+    return this.buf.length || 0;
   }
 }
 
