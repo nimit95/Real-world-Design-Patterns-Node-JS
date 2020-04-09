@@ -33,6 +33,7 @@ const sections = [
       { name: 'chainOfResponsibility', path: './Behavioral' },
       { name: 'command', path: './Behavioral' },
       { name: 'iterator', path: './Behavioral' },
+      { name: 'mediator', path: './Behavioral' },
     ]
   }
 ];
