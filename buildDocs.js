@@ -37,6 +37,7 @@ const sections = [
       { name: 'memento', path: './Behavioral' },
       { name: 'observer', path: './Behavioral' },
       { name: 'state', path: './Behavioral' },
+      { name: 'strategy', path: './Behavioral' },
     ]
   }
 ];
