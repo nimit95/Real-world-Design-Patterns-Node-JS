@@ -4,10 +4,12 @@
 =================
 
 Here you will find the 23 (Gof) design patterns implemented in Javascript using
-the ES6 classes with Node.js APIs. Also I have put an extra effort to make
-abstract classes as well. These files can be used to learn design patterns
-as well as Node APIs, You can use the [**docs.md**](docs.md) tto get overview
-of all examples.
+the ES6 classes with Node.js APIs. These files can be used to learn design
+patterns as well as Node APIs, You can use the [**docs.md**](docs.md) to get
+overview of all examples.
+
+📒 [All Examples at One Place](docs.md)
+------------------
 
 Follows the list of patterns separed by type:
 
@@ -51,3 +53,12 @@ Most of these design patterns are specifically concerned with communication betw
 - **Template:** method defines the skeleton of an algorithm as an abstract class, allowing its subclasses to provide concrete behavior.
 - **Visitor:** separates an algorithm from an object structure by moving the hierarchy of methods into one object.
 
+## 🚦 Wrap Up Folks
+
+And that about wraps it up. I will continue to improve this, so you might want to watch/star this repository to revisit. Also, I have plans on writing the same about the architectural patterns, stay tuned for it.
+
+## 👬 Contribution
+
+- Report issues
+- Open pull request with improvements
+- Spread the word
