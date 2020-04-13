@@ -38,6 +38,7 @@ const sections = [
       { name: 'observer', path: './Behavioral' },
       { name: 'state', path: './Behavioral' },
       { name: 'strategy', path: './Behavioral' },
+      { name: 'templateMethod', path: './Behavioral' },
     ]
   }
 ];
